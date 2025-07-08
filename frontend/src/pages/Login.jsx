@@ -28,7 +28,7 @@ const Login = () => {
 
     setIsLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/send-otp", { email });
+      await axios.post("https://note-taking-app-wciw.onrender.com/api/auth/send-otp", { email });
       setOtpSent(true);
       setErrors({});
       toast.success("OTP sent to your email!");
@@ -51,7 +51,7 @@ const Login = () => {
 
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/verify-otp", { email, otp });
+      const res = await axios.post("https://note-taking-app-wciw.onrender.com/api/auth/verify-otp", { email, otp });
 
       if (res.status === 200) {
         const token = res.data.token;

@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   const fetchNotes = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/notes/${userId}`);
+      const res = await axios.get(`https://note-taking-app-wciw.onrender.com/api/notes/${userId}`);
       setNotes(res.data);
       setFilteredNotes(res.data);
       const uniqueTags = Array.from(new Set(res.data.flatMap(note => note.tags)));
@@ -81,10 +81,10 @@ const Dashboard = () => {
     const payload = { title, content, tags, userId };
     try {
       if (editNoteId) {
-        await axios.put(`http://localhost:5000/api/notes/${editNoteId}`, payload);
+        await axios.put(`https://note-taking-app-wciw.onrender.com/api/notes/${editNoteId}`, payload);
         toast.success("Note updated");
       } else {
-        await axios.post("http://localhost:5000/api/notes/create", payload);
+        await axios.post("https://note-taking-app-wciw.onrender.com/api/notes/create", payload);
         toast.success("Note created");
       }
       setIsOpen(false);
@@ -97,7 +97,7 @@ const Dashboard = () => {
   const deleteNote = async (id) => {
     if (!window.confirm("Delete this note?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${id}`);
+      await axios.delete(`https://note-taking-app-wciw.onrender.com/api/notes/${id}`);
       toast.success("Note deleted");
       fetchNotes();
     } catch (err) {
