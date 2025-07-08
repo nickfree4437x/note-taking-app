@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaSpinner } from "react-icons/fa";
 import bg from "./bg.jpg";
 import logo from "./logo.png";
@@ -15,8 +15,6 @@ const Login = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [keepLoggedIn, setKeepLoggedIn] = useState(false);
-
-  const navigate = useNavigate();
 
   const handleSendOtp = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -66,7 +64,9 @@ const Login = () => {
         }
 
         toast.success("Login successful!");
-        navigate("/dashboard");
+
+        // 🔁 Hard redirect so token loads correctly
+        window.location.href = "/dashboard";
       }
     } catch (error) {
       const msg = error.response?.data?.message || "OTP verification failed";
