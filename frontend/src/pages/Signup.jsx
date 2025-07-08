@@ -67,7 +67,7 @@ const Signup = () => {
     }
 
     try {
-      await axios.post("https://note-taking-app-wciw.onrender.com/api/auth/send-otp", {
+      await axios.post("https://note-taking-app-z2ks.onrender.com/api/auth/send-otp", {
         email: formData.email,
       });
       setShowOtpInput(true);
@@ -91,7 +91,7 @@ const Signup = () => {
 
     try {
       setIsLoading(true);
-      const res = await axios.post("https://note-taking-app-wciw.onrender.com/api/auth/verify-otp", {
+      const res = await axios.post("https://note-taking-app-z2ks.onrender.com/api/auth/verify-otp", {
         name: formData.name,
         dob: formData.dob,
         email: formData.email,
