@@ -1,6 +1,3 @@
-## ✅ Final `README.md` for `note-taking-app`:
-
-```markdown
 # 📝 Note Taking App
 
 A full-stack MERN (MongoDB, Express.js, React, Node.js) based **Note-Taking App** with secure OTP-based login, tag-based filtering, and a beautiful responsive UI.
