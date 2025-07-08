@@ -1,7 +1,3 @@
-Bilkul bhai! Yahaan ek complete **`README.md` file** hai jo tumhare `note-taking-app` project ke liye perfect hai — jisme `frontend` aur `backend` folders hain, aur features jaise OTP login, note CRUD, tags, filter, etc. included hain.
-
----
-
 ## ✅ Final `README.md` for `note-taking-app`:
 
 ```markdown
