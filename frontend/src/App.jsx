@@ -17,7 +17,6 @@ function App() {
   if (loading) return null; // jab tak token check nahi hota tab kuch bhi mat dikhao
 
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
@@ -26,7 +25,6 @@ function App() {
           element={token ? <Dashboard /> : <Navigate to="/login" replace />}
         />
       </Routes>
-    </Router>
   );
 }
 
