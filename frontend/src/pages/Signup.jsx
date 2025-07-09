@@ -180,18 +180,24 @@ const Signup = () => {
             {/* Date Field */}
             <div className="relative">
               <input
-                type="date"
+                type={focusedFields.dob ? "date" : "text"}
                 name="dob"
+                placeholder="Date of Birth"
                 className="w-full border border-gray-500 rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-400 text-gray-500"
                 value={formData.dob}
                 onChange={handleChange}
-                onFocus={() => handleFocus("dob")}
-                onBlur={() => handleBlur("dob")}
+                onFocus={() => setFocusedFields({ ...focusedFields, dob: true })}
+                onBlur={(e) => {
+                  if (!e.target.value) {
+                    setFocusedFields({ ...focusedFields, dob: false });
+                  }
+                }}
               />
               {errors.dob && (
                 <p className="text-red-500 text-sm mt-1">{errors.dob}</p>
               )}
             </div>
+
 
             {/* Email Field */}
             <div className="relative">
